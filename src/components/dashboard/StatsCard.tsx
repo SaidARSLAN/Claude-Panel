@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { MessageSquare, Coins, Clock, Zap, BarChart3 } from 'lucide-react';
+import { MessageSquare, Coins, Clock, Zap, BarChart3, TrendingDown, Lightbulb, Database } from 'lucide-react';
 
 const icons = {
   'message-square': MessageSquare,
@@ -9,6 +9,9 @@ const icons = {
   'clock': Clock,
   'zap': Zap,
   'bar-chart': BarChart3,
+  'trending-down': TrendingDown,
+  'lightbulb': Lightbulb,
+  'database': Database,
 };
 
 type IconName = keyof typeof icons;

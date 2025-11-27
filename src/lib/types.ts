@@ -154,3 +154,75 @@ export interface SessionResponse {
 
 // Export formats
 export type ExportFormat = 'json' | 'markdown' | 'csv';
+
+// Cost Optimization Types
+
+// Prompt pattern analysis
+export interface PromptPattern {
+  pattern: string;           // First 100 characters (truncated)
+  fullPrompt: string;        // Full prompt text
+  count: number;             // Usage count
+  totalCost: number;         // Total cost for this pattern
+  totalInputTokens: number;
+  totalOutputTokens: number;
+  avgCostPerUse: number;
+  sessions: string[];        // Related session IDs
+  model: string;             // Most frequently used model
+}
+
+// Model downgrade suggestion
+export interface ModelSuggestion {
+  currentModel: string;
+  suggestedModel: string;
+  currentCost: number;
+  projectedCost: number;
+  savings: number;
+  sessionsAffected: number;
+  reason: string;
+}
+
+// Cache efficiency analysis
+export interface CacheAnalysis {
+  totalCacheRead: number;
+  totalCacheWrite: number;
+  totalInputTokens: number;
+  cacheHitRate: number;      // cache_read / (cache_read + input)
+  potentialSavings: number;  // If cache was better utilized
+}
+
+// Optimization suggestion
+export interface OptimizationSuggestion {
+  id: string;
+  type: 'model' | 'prompt' | 'cache' | 'output';
+  priority: 'high' | 'medium' | 'low';
+  title: string;
+  description: string;
+  potentialSavings: number;
+  implementation: string;    // How to implement
+  affectedSessions: number;
+}
+
+// Model usage breakdown
+export interface ModelUsage {
+  model: string;
+  sessions: number;
+  cost: number;
+  percentage: number;
+}
+
+// Full optimization analysis
+export interface OptimizationAnalysis {
+  // Summary
+  totalCurrentCost: number;
+  totalPotentialSavings: number;
+  savingsPercentage: number;
+
+  // Detailed Analysis
+  topExpensivePatterns: PromptPattern[];
+  modelSuggestions: ModelSuggestion[];
+  cacheAnalysis: CacheAnalysis;
+  suggestions: OptimizationSuggestion[];
+
+  // Model breakdown
+  modelUsage: ModelUsage[];
+}

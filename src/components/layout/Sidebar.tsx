@@ -10,6 +10,7 @@ import {
   MessageSquare,
   BarChart3,
   DollarSign,
+  Lightbulb,
   Terminal,
   Menu,
   X
@@ -20,6 +21,7 @@ const navItems = [
   { href: '/sessions', label: 'Sessions', icon: MessageSquare },
   { href: '/analytics', label: 'Analytics', icon: BarChart3 },
   { href: '/costs', label: 'Costs', icon: DollarSign },
+  { href: '/optimization', label: 'Optimization', icon: Lightbulb },
 ];
 
 export function Sidebar() {
