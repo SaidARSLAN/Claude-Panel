@@ -1,72 +1,50 @@
 # Claude Panel
 
-A dashboard for visualizing Claude Code usage statistics. Track token consumption, cost analysis, and session history from a single interface.
+A dashboard for visualizing your Claude Code usage. Track how much you spend, which projects consume the most tokens, and find ways to reduce costs.
 
 ## What It Does
 
-Claude Code saves session logs to the `~/.claude` folder while running in the terminal. This app reads those logs and provides:
+Claude Code saves session logs to `~/.claude` while you work. This app reads those logs and shows you:
 
-- Total token usage and cost tracking
-- Daily/monthly usage trends
-- Project-based statistics
-- Model-based cost breakdown
-- Session history with conversation details
-- Cost optimization suggestions
+- How much you've spent in total and per project
+- Daily and monthly usage trends
+- Full conversation history for any session
+- Tips to reduce your costs
 
-## Installation
-
-Install dependencies:
+## Getting Started
 
 ```bash
 npm install
-```
-
-Start the development server:
-
-```bash
 npm run dev
 ```
 
 Open `http://localhost:3000` in your browser.
 
-## Configuration
-
-By default, the app reads data from `~/.claude`. To use a different location, set the `CLAUDE_DIR` environment variable:
+If your Claude logs are in a different location:
 
 ```bash
-CLAUDE_DIR=/path/to/claude npm run dev
+CLAUDE_DIR=/your/path npm run dev
 ```
 
-## Pages
+## How to Use
 
 ### Dashboard
-Main page with summary stats including total sessions, token usage, cost, and duration. Shows daily usage chart and project distribution.
+Start here. See your total sessions, tokens, cost, and time spent. The charts show daily trends and which projects use the most resources.
 
 ### Sessions
-List of all Claude Code sessions. Filter by date, project, model, and cost. Click any session to view the full conversation.
+Browse all your past conversations. Use filters to find specific sessions by date, project, or model. Click any session to read the full chat.
 
 ### Analytics
-Detailed usage analysis with model-based token distribution, project comparisons, and daily trends.
+Dig deeper into the numbers. Compare projects side by side, see which models you use most, and track how your usage changes over time.
 
 ### Costs
-Cost analysis page. Compare current vs previous month, see cost breakdown by token type (input, output, cache read, cache write), and view current model pricing.
+Understand where your money goes. See the breakdown between input tokens, output tokens, and cache usage. Compare this month to last month.
 
 ### Cost Optimization
-Cost reduction suggestions based on your usage patterns. Includes cache efficiency analysis, model change recommendations, and most expensive prompt patterns.
-
-## Tech Stack
-
-- Next.js 16
-- React 19
-- Tailwind CSS 4
-- Recharts
-- Radix UI
-
-## Notes
-
-- Read-only - does not modify log files
-- Server-side data processing, no API key required
-- Dark mode supported
+Get practical suggestions to spend less. The app analyzes your patterns and tells you:
+- Which prompts cost you the most
+- Whether you could use cheaper models for some tasks
+- How well you're using the cache system
 
 ## License
 
