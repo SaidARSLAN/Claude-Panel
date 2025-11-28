@@ -1,73 +1,73 @@
 # Claude Panel
 
-Claude Code kullanım istatistiklerini görselleştiren bir dashboard uygulaması. Token kullanımı, maliyet analizi ve oturum geçmişi gibi verileri tek bir arayüzden takip edebilirsiniz.
+A dashboard for visualizing Claude Code usage statistics. Track token consumption, cost analysis, and session history from a single interface.
 
-## Ne İşe Yarar?
+## What It Does
 
-Claude Code terminalden çalışırken arka planda `~/.claude` klasörüne oturum loglarını kaydeder. Bu uygulama o logları okuyup size şu bilgileri sunar:
+Claude Code saves session logs to the `~/.claude` folder while running in the terminal. This app reads those logs and provides:
 
-- Toplam token kullanımı ve maliyet
-- Günlük/aylık kullanım trendleri
-- Proje bazlı istatistikler
-- Model bazlı maliyet dağılımı
-- Oturum geçmişi ve konuşma detayları
-- Maliyet optimizasyon önerileri
+- Total token usage and cost tracking
+- Daily/monthly usage trends
+- Project-based statistics
+- Model-based cost breakdown
+- Session history with conversation details
+- Cost optimization suggestions
 
-## Kurulum
+## Installation
 
-Önce bağımlılıkları yükleyin:
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-Geliştirme sunucusunu başlatın:
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-Tarayıcınızda `http://localhost:3000` adresini açın.
+Open `http://localhost:3000` in your browser.
 
-## Yapılandırma
+## Configuration
 
-Varsayılan olarak uygulama `~/.claude` klasöründen verileri okur. Farklı bir konum kullanmak istiyorsanız `CLAUDE_DIR` ortam değişkenini ayarlayın:
+By default, the app reads data from `~/.claude`. To use a different location, set the `CLAUDE_DIR` environment variable:
 
 ```bash
 CLAUDE_DIR=/path/to/claude npm run dev
 ```
 
-## Sayfalar
+## Pages
 
 ### Dashboard
-Ana sayfa. Toplam oturum sayısı, token kullanımı, maliyet ve süre gibi özet istatistikleri gösterir. Günlük kullanım grafiği ve proje dağılımı burada.
+Main page with summary stats including total sessions, token usage, cost, and duration. Shows daily usage chart and project distribution.
 
 ### Sessions
-Tüm Claude Code oturumlarının listesi. Tarih, proje, model ve maliyet bilgileriyle filtreleyebilirsiniz. Herhangi bir oturuma tıklayarak konuşma detaylarına ulaşabilirsiniz.
+List of all Claude Code sessions. Filter by date, project, model, and cost. Click any session to view the full conversation.
 
 ### Analytics
-Detaylı kullanım analizi. Model bazlı token dağılımı, proje karşılaştırmaları ve günlük trendler burada.
+Detailed usage analysis with model-based token distribution, project comparisons, and daily trends.
 
 ### Costs
-Maliyet analizi sayfası. Bu ay / geçen ay karşılaştırması, token türüne göre maliyet dağılımı (input, output, cache read, cache write) ve güncel model fiyatlandırma tablosu.
+Cost analysis page. Compare current vs previous month, see cost breakdown by token type (input, output, cache read, cache write), and view current model pricing.
 
 ### Cost Optimization
-Kullanım alışkanlıklarınıza göre maliyet düşürme önerileri. Cache verimliliği analizi, model değişikliği önerileri ve en pahalı prompt kalıpları.
+Cost reduction suggestions based on your usage patterns. Includes cache efficiency analysis, model change recommendations, and most expensive prompt patterns.
 
-## Teknolojiler
+## Tech Stack
 
 - Next.js 16
 - React 19
 - Tailwind CSS 4
-- Recharts (grafikler)
-- Radix UI (bileşenler)
+- Recharts
+- Radix UI
 
-## Notlar
+## Notes
 
-- Uygulama sadece okuma yapar, log dosyalarını değiştirmez
-- Veriler sunucu tarafında işlenir, API key gerekmez
-- Dark mode destekler
+- Read-only - does not modify log files
+- Server-side data processing, no API key required
+- Dark mode supported
 
-## Lisans
+## License
 
 MIT
