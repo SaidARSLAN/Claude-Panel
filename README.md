@@ -46,6 +46,10 @@ Get practical suggestions to spend less. The app analyzes your patterns and tell
 - Whether you could use cheaper models for some tasks
 - How well you're using the cache system
 
+<img width="1470" height="833" alt="Screenshot 2025-11-29 at 00 30 52" src="https://github.com/user-attachments/assets/775ca095-8f63-4e14-af95-1b5fe1e2027d" />
+
+<img width="1469" height="834" alt="Screenshot 2025-11-29 at 00 31 09" src="https://github.com/user-attachments/assets/cc0396a8-5982-44d0-9593-c6bbece1ee5e" />
+
 ## License
 
 MIT
