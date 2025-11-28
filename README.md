@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Claude Panel
 
-## Getting Started
+Claude Code kullanım istatistiklerini görselleştiren bir dashboard uygulaması. Token kullanımı, maliyet analizi ve oturum geçmişi gibi verileri tek bir arayüzden takip edebilirsiniz.
 
-First, run the development server:
+## Ne İşe Yarar?
+
+Claude Code terminalden çalışırken arka planda `~/.claude` klasörüne oturum loglarını kaydeder. Bu uygulama o logları okuyup size şu bilgileri sunar:
+
+- Toplam token kullanımı ve maliyet
+- Günlük/aylık kullanım trendleri
+- Proje bazlı istatistikler
+- Model bazlı maliyet dağılımı
+- Oturum geçmişi ve konuşma detayları
+- Maliyet optimizasyon önerileri
+
+## Kurulum
+
+Önce bağımlılıkları yükleyin:
+
+```bash
+npm install
+```
+
+Geliştirme sunucusunu başlatın:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Tarayıcınızda `http://localhost:3000` adresini açın.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Yapılandırma
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Varsayılan olarak uygulama `~/.claude` klasöründen verileri okur. Farklı bir konum kullanmak istiyorsanız `CLAUDE_DIR` ortam değişkenini ayarlayın:
 
-## Learn More
+```bash
+CLAUDE_DIR=/path/to/claude npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Sayfalar
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Dashboard
+Ana sayfa. Toplam oturum sayısı, token kullanımı, maliyet ve süre gibi özet istatistikleri gösterir. Günlük kullanım grafiği ve proje dağılımı burada.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Sessions
+Tüm Claude Code oturumlarının listesi. Tarih, proje, model ve maliyet bilgileriyle filtreleyebilirsiniz. Herhangi bir oturuma tıklayarak konuşma detaylarına ulaşabilirsiniz.
 
-## Deploy on Vercel
+### Analytics
+Detaylı kullanım analizi. Model bazlı token dağılımı, proje karşılaştırmaları ve günlük trendler burada.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Costs
+Maliyet analizi sayfası. Bu ay / geçen ay karşılaştırması, token türüne göre maliyet dağılımı (input, output, cache read, cache write) ve güncel model fiyatlandırma tablosu.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Cost Optimization
+Kullanım alışkanlıklarınıza göre maliyet düşürme önerileri. Cache verimliliği analizi, model değişikliği önerileri ve en pahalı prompt kalıpları.
+
+## Teknolojiler
+
+- Next.js 16
+- React 19
+- Tailwind CSS 4
+- Recharts (grafikler)
+- Radix UI (bileşenler)
+
+## Notlar
+
+- Uygulama sadece okuma yapar, log dosyalarını değiştirmez
+- Veriler sunucu tarafında işlenir, API key gerekmez
+- Dark mode destekler
+
+## Lisans
+
+MIT
